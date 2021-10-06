@@ -11,7 +11,7 @@ pipeline {
         stage('Docker build') {
             steps {
                 sh (script: """
-                docker images -Y
+                docker images -a
                 docker run hello-world
                 docker images -a
                 """
@@ -19,10 +19,10 @@ pipeline {
             }
             post {
                 success {
-                    echo "Branch was retrieved successfully 😀"
+                    echo "docker image was spinned successfully 😀"
                 }
                 failure {
-                    echo "There is no git branch 😟 "
+                    echo "Could not run docker image 😟 "
                 }
             }            
         }
