@@ -7,5 +7,11 @@ pipeline {
                 echo "$GIT_BRANCH"
             }
         }
+
+        stage('Docker build') {
+            steps {
+                sh 'docker image -a'
+            }
+        }
     }
 }
