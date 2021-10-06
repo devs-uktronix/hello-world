@@ -19,10 +19,10 @@ pipeline {
             }
             post {
                 success {
-                    echo "Branch was retrieved successfully"
+                    echo "Branch was retrieved successfully 😀"
                 }
                 failure {
-                    echo "There is no git branch"
+                    echo "There is no git branch 😟 "
                 }
             }            
         }
