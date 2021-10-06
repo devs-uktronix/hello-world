@@ -10,7 +10,7 @@ pipeline {
 
         stage('Docker build') {
             steps {
-                sh (sh: """
+                sh (script: """
                 docker images -a
                 docker run hello-world
                 docker images -a
