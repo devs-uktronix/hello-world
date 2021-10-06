@@ -18,15 +18,15 @@ pipeline {
                 )
             }
 
-        stage('Breaking this build') {
-            steps {
-                sh (sh: """
-                docker images -a
-                docker run hello-world
-                docker images -a
-                """
-                )
-            }
+        // stage('Breaking this build') {
+        //     steps {
+        //         sh (sh: """
+        //         docker images -a
+        //         docker run hello-world
+        //         docker images -a
+        //         """
+        //         )
+        //     }
             post {
                 success {
                     echo "Branch was retrieved successfully 😀"
