@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh (script: """
                     # Create a working dir
-                    sh create_folder.sh
+                    sh sync_certs.sh
                     """
                 )
             }
@@ -18,8 +18,6 @@ pipeline {
                     echo "Could not sync ssl certifactes 😟 "
                 }
             }  
-            
-                      
         }
         stage('Encypt private ssl certificates') {
             steps {
@@ -30,14 +28,37 @@ pipeline {
             }
             post {
                 success {
-                    echo "ssl certifactes have been synched successfully 😀"
+                    echo "ssl certifactes have been ansible-encrypted successfully 😀"
                 }
                 failure {
-                    echo "Could not sync ssl certifactes 😟 "
+                    echo "Could not ansible-encrypt ssl certifactes 😟 "
                 }
-            }  
-            
-                      
+            }         
         }
+
+        stage('Clone main repo and upload new encrypted certs') {
+            steps {
+                sh (script: """
+                    git clone https://github.com/devs-uktronix/hello-world.git
+                    cd hello-world
+                    git checkout -b ssl_certs_renew_branch_`date +%F`
+                    # temp_ssl_backup_2021-10-07/test_certs_import/
+
+                    """
+                )
+            }
+            post {
+                success {
+                    echo "ssl certifactes have been ansible-encrypted successfully 😀"
+                }
+                failure {
+                    echo "Could not ansible-encrypt ssl certifactes 😟 "
+                }
+            }         
+        }
+
+
+
+
     }
 }
