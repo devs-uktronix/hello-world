@@ -8,7 +8,7 @@ SRC_CERT_HOSTNAME_PATH='/home/redwan/fake_ssl/test_certs_import'
 
 DST_CERT_DIR='${DST_WORK_DIR}_${TODAY}'
 
-mkdir -p ${DST_WORK_DIR}_${TODAY}
+mkdir -p ${DST_CERT_DIR}
 
 
 rsync -e "ssh -i ${SSH_KEY}" -az redwan@${SRC_CERT_HOSTNAME}:${SRC_CERT_HOSTNAME_PATH} ${DST_CERT_DIR}
