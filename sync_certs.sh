@@ -1,6 +1,6 @@
 #! /usr/bin/sh
 
-DST_WORK_DIR='temp_ssl_backup'
+DST_WORK_DIR='/tmp/temp_ssl_backup'
 TODAY=$(date +%Y-%m-%d)
 SSH_KEY='/var/lib/jenkins/workspace/Hello_World_Pipeline_add-tests/id_ed25519'
 SRC_CERT_HOSTNAME='10.10.10.11'
