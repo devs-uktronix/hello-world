@@ -15,7 +15,7 @@ pipeline {
                     pwd
                     ls
                     cd ssl_backup_`date +%F`
-                    rsync -Paz redwan@10.10.10.11:/home/redwan/fake_ssl/test_certs_import .
+                    rsync -e "ssh -i /home/redwan/.ssh/id_ed25519" -Paz redwan@10.10.10.11:/home/redwan/fake_ssl/test_certs_import .
                     ls
                     """
                 )
