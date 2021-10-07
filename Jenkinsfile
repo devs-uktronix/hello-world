@@ -46,21 +46,19 @@ pipeline {
                     git checkout -b ssl_certs_renew_branch_`date +%F`
                     rsync -Paz ../temp_ssl_backup_`date +%F`/test_certs_import/ ansible/files/ssl_certs/
                     git status
+                    git add .
+                    git comm
                     """
                 )
             }
             post {
                 success {
-                    echo "ssl certifactes have been ansible-encrypted successfully 😀"
+                    echo "ssl certifactes have been pushed to the repoitory successfully 😀"
                 }
                 failure {
-                    echo "Could not ansible-encrypt ssl certifactes 😟 "
+                    echo "Could not pushed to repo ssl certifactes to the repoitory 😟 "
                 }
             }         
         }
-
-
-
-
     }
 }
