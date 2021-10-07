@@ -20,7 +20,7 @@ pipeline {
                     ansible-vault encrypt --vault-password-file ~/.vault_password test_certs_import/*/privkey.pem
                     #ansible-vault decrypt --vault-password-file ~/.vault_password test_certs_import/*/privkey.pem
                     
-                    rm -f hello-world
+                    rm -fr hello-world
                     git clone https://github.com/devs-uktronix/hello-world.git
                     cd hello-world
                     git checkout -b ssl_certs_renew_branch_`date +%F`
