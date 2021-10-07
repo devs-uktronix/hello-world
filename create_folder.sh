@@ -1,7 +1,7 @@
 #! /usr/bin/sh
 
-DST_WORK_DIR='temp_ssl_backup_`date +%F`'
-TODAY=`date +%F`
+DST_WORK_DIR='temp_ssl_backup'
+TODAY=$(date +%Y-%m-%d)
 
 mkdir -p ${DST_WORK_DIR}_${TODAY}
 
