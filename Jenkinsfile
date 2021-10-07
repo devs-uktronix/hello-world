@@ -19,7 +19,13 @@ pipeline {
                     ls
                     ansible-vault encrypt --vault-password-file ~/.vault_password test_certs_import/*/privkey.pem
                     #ansible-vault decrypt --vault-password-file ~/.vault_password test_certs_import/*/privkey.pem
+                    
+                    git clone https://github.com/devs-uktronix/hello-world.git
+                    cd hello-world
+                    rsync -Paz test_certs_import/ ansible/files/ssl_certs/
+                    git status
                     """
+
                 )
             }
             post {
