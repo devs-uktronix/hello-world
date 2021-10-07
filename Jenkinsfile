@@ -22,7 +22,7 @@ pipeline {
         stage('Encypt private ssl certificates') {
             steps {
                 sh (script: """
-                    ansible-vault encrypt --vault-password-file ~/.vault_password temp_ssl_backup_`date +%F`/test_certs_import/*/privkey.pem
+                    ansible-vault encrypt --vault-password-file ~/.vault_password tmp/temp_ssl_backup_`date +%F`/test_certs_import/*/privkey.pem
                     """
                 )
             }

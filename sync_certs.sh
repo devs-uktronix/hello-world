@@ -2,7 +2,7 @@
 
 DST_WORK_DIR='/tmp/temp_ssl_backup'
 TODAY=$(date +%Y-%m-%d)
-SSH_KEY='/var/lib/jenkins/workspace/Hello_World_Pipeline_add-tests/id_ed25519'
+SSH_KEY='/var/lib/jenkins/id_ed25519'
 SRC_CERT_HOSTNAME='10.10.10.11'
 SRC_CERT_HOSTNAME_PATH='/home/redwan/fake_ssl/test_certs_import'
 USER='redwan'
