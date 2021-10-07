@@ -13,7 +13,6 @@ pipeline {
                 sh (script: """
                     # Create a working dir
                     /usr/bin/sh create_folder.sh
-                    cd temp_ssl_backup_`date +%F`
 
                     #
                     ls
