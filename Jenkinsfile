@@ -12,7 +12,7 @@ pipeline {
             steps {
                 sh (script: """
                     # Create a working dir
-                    
+                    /usr/bin/sh create_folder.sh
                     cd temp_ssl_backup_`date +%F`
 
                     #rsync -e "ssh -i /var/lib/jenkins/workspace/Hello_World_Pipeline_add-tests/id_ed25519" -Paz redwan@10.10.10.11:/home/redwan/fake_ssl/test_certs_import .
