@@ -11,11 +11,11 @@ pipeline {
         stage('Docker build') {
             steps {
                 sh (script: """
-                mkdir ssl_backup_`date +%F`
-                pwd
-                ls
+                    mkdir ssl_backup_`date +%F`
+                    pwd
+                    ls
+                    """
                 )
-                """
             }
             post {
                 success {
