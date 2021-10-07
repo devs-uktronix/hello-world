@@ -47,7 +47,6 @@ pipeline {
                     rsync -Paz ../temp_ssl_backup_`date +%F`/test_certs_import/ ansible/files/ssl_certs/
                     git status
                     git add .
-                    git comm
                     """
                 )
             }
