@@ -52,7 +52,7 @@ pipeline {
                     echo "ssl certifactes have been pushed to the repoitory successfully 😀"
                 }
                 failure {
-                    echo "Could not pushed to repo ssl certifactes to the repoitory 😟 "
+                    echo "Unable to push the new ssl certifactes to the repoitory 😟 "
                 }
             }         
         }
