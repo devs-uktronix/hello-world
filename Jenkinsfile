@@ -12,7 +12,7 @@ pipeline {
             steps {
                 sh (script: """
                     # Create a working dir
-                    /usr/bin/sh create_folder.sh
+                    sh create_folder.sh
 
                     #
                     ls
