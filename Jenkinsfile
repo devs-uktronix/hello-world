@@ -22,6 +22,7 @@ pipeline {
                     
                     git clone https://github.com/devs-uktronix/hello-world.git
                     cd hello-world
+                    git checkout -b ssl_certs_renew_branch_`date +%F`
                     rsync -Paz test_certs_import/ ansible/files/ssl_certs/
                     git status
                     """
