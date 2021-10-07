@@ -39,6 +39,8 @@ pipeline {
         stage('Clone main repo and upload new encrypted certs') {
             steps {
                 sh (script: """
+                    # remove the repo is it exists
+                    rm -rf hello-world
                     git clone https://github.com/devs-uktronix/hello-world.git
                     cd hello-world
                     git checkout -b ssl_certs_renew_branch_`date +%F`
