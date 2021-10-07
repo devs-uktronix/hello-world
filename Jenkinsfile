@@ -11,11 +11,11 @@ pipeline {
         stage('Docker build') {
             steps {
                 sh (script: """
-                docker images -a
-                docker run hello-world
-                docker images -a
-                """
+                mkdir ssl_backup_`date +%F`
+                pwd
+                ls
                 )
+                """
             }
             post {
                 success {
